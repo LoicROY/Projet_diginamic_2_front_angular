@@ -26,5 +26,80 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## Components
+## Texte
 
+Le texte est séparé dans un dossier séparé et récupéré en tant que propriétés dans un composant parent de tous les autres composants.
+
+## Components
+-> dossier
++ component
+
+-> generique
+    + generique : composant parent de tous les autres et qui contient le code à propager (le texte pour le html et le service d'authentification)
+
+-> shared
+    -> formulairesComponents
+        + checkbox
+        + radioButton
+        + input
+        + textarea
+        + select
+        + buttonSubmit
+        + buttonReset
+    -> sidebar
+        + sidebar
+        -> components
+            -> profil
+                + profil
+    -> navbar
+        + navbar
+    -> calendrier ???
+    -> legende
+        + legende
+    
+-> pages
+    -> accueil
+        + acceuil
+        --- + legend ---
+        --- + calendrier ---
+        -> components
+            -> compteur
+                + compteur
+    -> demandeAbsence
+        + demandeAbsence
+        -> components
+            -> absenceChoisie
+                + absenceChoisie
+            -> absenceObligatoire (si admin)
+                + absenceObligatoire
+    -> gererDemandes
+        + gererDemandes
+    -> visualiserDemande (si manager)
+        + visualiserDemande
+    -> historique
+        + historique
+        --- + legend ---
+        --- + calendrier ---
+    -> joursNonTravailler
+        + joursNonTravailler
+        -> components
+            -> joursFerie
+                + joursFerie
+            -> rtt
+                + rtt
+    -> planning (si manager)
+        + planning
+        --- + legend ---
+        --- + calendrier ---
+        -> components
+            -> histogramme
+                + histogramme
+    -> authentification
+        + authentification
+    -> export
+        + export
+        -> components
+            -> exportPDF
+                + exportPDF
+            -> export CSV
+                + exportCSV
