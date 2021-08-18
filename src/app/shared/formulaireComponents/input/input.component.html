@@ -1,0 +1,35 @@
+<div class="form-group">
+  <!-- label -->
+  <div class="d-flex">
+    <label id="id-label-input-{{ id }}" for="{{ id }}">{{ label }}</label>
+    <span *ngIf="!required">(optionnel)</span>
+  </div>
+
+  <!-- input -->
+  <input
+    [id]="id"
+    [name]="'input-name-' + id"
+    [type]="type"
+    [placeholder]="placeholder"
+    [required]="required"
+    [disabled]="disabled"
+    maxlength="{{maxlength}}"
+    minlength="{{minlength}}"
+    [autocomplete]="autocomplete"
+    [ngClass]="{ 'input-error': erreur }"
+    [(ngModel)]="inputModel"
+    (input)="modelChange($event)"
+    (blur)="onBlurHandler($event)"
+  />
+
+  <!-- erreur -->
+  <span
+    *ngIf="erreur"
+    role="alert"
+    id="message-erreur-input-{{ id }}"
+    class="message-erreur-input"
+  >
+    {{ erreur }}
+  </span>
+  
+</div>
