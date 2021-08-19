@@ -2,13 +2,13 @@
   <!-- label -->
   <div class="d-flex">
     <label id="id-label-input-{{ id }}" for="{{ id }}">{{ label }}</label>
-    <span *ngIf="!required">(optionnel)</span>
+    <span *ngIf="!required">&nbsp;(optionnel)</span>
   </div>
 
   <!-- input -->
   <input
     [id]="id"
-    [name]="'input-name-' + id"
+    name="input-name-{{ id }}"
     [type]="type"
     [placeholder]="placeholder"
     [required]="required"
@@ -18,7 +18,7 @@
     [autocomplete]="autocomplete"
     [ngClass]="{ 'input-error': erreur }"
     [(ngModel)]="inputModel"
-    (input)="modelChange($event)"
+    (input)="modelChange()"
     (blur)="onBlurHandler($event)"
   />
 
@@ -27,7 +27,7 @@
     *ngIf="erreur"
     role="alert"
     id="message-erreur-input-{{ id }}"
-    class="message-erreur-input"
+    class="message-erreur"
   >
     {{ erreur }}
   </span>

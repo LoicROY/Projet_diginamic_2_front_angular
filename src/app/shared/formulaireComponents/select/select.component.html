@@ -1,0 +1,19 @@
+<div class="form-group">
+  <!-- label -->
+  <label for="{{ name }}" id="label-select-{{ name }}">{{ label }}</label>
+  <span *ngIf="!required">&nbsp;(optionnel)</span>
+  <!-- select -->
+  <select
+    name="{{ name }}"
+    id="{{ name }}"
+    [required]="required"
+    [disabled]="disabled"
+    class="form-control"
+    [(ngModel)]="selectModel"
+    [compareWith]="isSelect"
+    (ngModelChange)="modelChange()"
+    (blur)="onBlurHandler($event)"
+  >
+    <option *ngFor="let option of options" [ngValue]="option">{{option}}</option>
+  </select>
+</div>

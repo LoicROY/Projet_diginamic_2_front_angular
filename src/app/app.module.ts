@@ -8,11 +8,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputComponent } from './shared/formulaireComponents/input/input.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RadioButtonComponent } from './shared/formulaireComponents/radio-button/radio-button.component';
+import { TextAreaComponent } from './shared/formulaireComponents/text-area/text-area.component';
+import { SelectComponent } from './shared/formulaireComponents/select/select.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    InputComponent
+    InputComponent,
+    RadioButtonComponent,
+    TextAreaComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,
