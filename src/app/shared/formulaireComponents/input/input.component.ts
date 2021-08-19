@@ -112,7 +112,17 @@ export class InputComponent extends GeneriqueComponent implements OnInit {
 
         // Si champs nulle, pas de check de format
         if (!this.inputModel){
-            return
+            return;
+        }
+
+        if (this.minlength && this.inputModel.length < this.minlength) {
+            this.erreur = this.ERREUR.MIN_LENGHT;
+            return;
+        }
+
+        if (this.maxlength && this.inputModel.length > this.maxlength) {
+            this.erreur = this.ERREUR.MAX_LENGHT;
+            return;
         }
 
         switch (this.type) {
