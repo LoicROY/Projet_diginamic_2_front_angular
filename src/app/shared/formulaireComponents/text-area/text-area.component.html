@@ -1,0 +1,35 @@
+<div class="form-group">
+    <!-- label -->
+    <div class="d-flex">
+      <label id="id-label-input-{{ id }}" for="{{ id }}">{{ label }}</label>
+      <span *ngIf="!required">&nbsp;(optionnel)</span>
+    </div>
+  
+    <!-- input -->
+    <textarea
+      [id]="id"
+      name="textarea-name-{{ id }}"
+      [placeholder]="placeholder"
+      [required]="required"
+      [disabled]="disabled"
+      [rows]="getRows()"
+      [cols]="getCols()"
+      [autocomplete]="autocomplete"
+      [ngClass]="{ 'textarea-error': erreur }"
+      [(ngModel)]="textAreaModel"
+      (input)="modelChange($event)"
+      (blur)="onBlurHandler($event)"
+    ></textarea>
+  
+    <!-- erreur -->
+    <span
+      *ngIf="erreur"
+      role="alert"
+      id="message-erreur-textarea-{{ id }}"
+      class="message-erreur"
+    >
+      {{ erreur }}
+    </span>
+    
+  </div>
+  

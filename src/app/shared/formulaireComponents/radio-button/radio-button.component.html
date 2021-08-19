@@ -1,0 +1,17 @@
+<div class="d-flex flex-wrap flex-column">
+  <div class="flex-even" *ngFor="let option of options; let i = index">
+    <input
+      type="radio"
+      class="sr-only"
+      [name]="name"
+      id="{{ name }}-{{ i }}"
+      [value]="option"
+      (change)="modelChange(option)"
+      [checked]="isCheck(option)"
+    />
+    <label
+      for="{{ name }}-{{ i }}"
+      class="d-flex align-items-center justify-content-center"
+    >{{option}}</label>
+  </div>
+</div>
