@@ -14,7 +14,14 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './pages/login/login.component';
 import { ButtonComponent } from './shared/formulaireComponents/button/button.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { AcceuilComponent } from './component/accueil/accueil.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { CalendarComponent } from './component/calendar/calendar.component';
 import { PagesComponent } from './pages/pages.component';
+
 
 @NgModule({
   declarations: [
@@ -26,9 +33,12 @@ import { PagesComponent } from './pages/pages.component';
     LoginComponent,
     ButtonComponent,
     SidebarComponent,
-    PagesComponent
+    PagesComponent,
+    AcceuilComponent,
+    CalendarComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
@@ -40,7 +50,13 @@ import { PagesComponent } from './pages/pages.component';
             disallowedRoutes: ["http://localhost:8088/login"],
             skipWhenExpired: true
           }
-    })
+    }),
+    NgbModule,
+    BrowserAnimationsModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
