@@ -13,6 +13,8 @@ import { SelectComponent } from './shared/formulaireComponents/select/select.com
 import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './pages/login/login.component';
 import { ButtonComponent } from './shared/formulaireComponents/button/button.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
+import { PagesComponent } from './pages/pages.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ButtonComponent } from './shared/formulaireComponents/button/button.com
     TextAreaComponent,
     SelectComponent,
     LoginComponent,
-    ButtonComponent
+    ButtonComponent,
+    SidebarComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,

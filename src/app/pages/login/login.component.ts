@@ -2,6 +2,7 @@ import { GeneriqueComponent } from './../../generique/generique.component';
 import { Component, Input, OnInit } from '@angular/core';
 import { UserLogin } from 'src/app/model/userLogin';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-login',
@@ -27,7 +28,7 @@ export class LoginComponent extends GeneriqueComponent implements OnInit {
     public erreur: { email?: string, password?: string } = {};
 
 
-    constructor() {
+    constructor(private router: Router) {
         super();
     }
 
@@ -46,8 +47,10 @@ export class LoginComponent extends GeneriqueComponent implements OnInit {
      */
     public login(): void {
         this.httpService.login(this.userLogin).subscribe(
-            jwt => sessionStorage.setItem('jwt', jwt),
-            // jwt => console.log(jwt),
+            jwt => { 
+                sessionStorage.setItem('jwt', jwt);
+                this.router.navigateByUrl(this.URL.PAGES);
+            },
             erreur => console.log(erreur)
         );
     }
