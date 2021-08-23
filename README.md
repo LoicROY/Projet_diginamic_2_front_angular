@@ -67,6 +67,9 @@ Le texte est séparé dans un dossier séparé et récupéré en tant que propri
     -> legende
         + legende
     
+-> acceuil
+    + accueil
+
 -> pages
     -> accueil
         + acceuil
@@ -104,8 +107,8 @@ Le texte est séparé dans un dossier séparé et récupéré en tant que propri
         -> components
             -> histogramme
                 + histogramme
-    -> authentification
-        + authentification
+    -> login
+        + login
     -> export
         + export
         -> components
