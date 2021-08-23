@@ -32,6 +32,12 @@ export class RadioButtonComponent extends GeneriqueComponent implements OnInit {
     @Input()
     public name!: string;
 
+    /**
+     * Désactive le radio button
+     */
+     @Input()
+     public disabled: boolean = false;
+
     
     constructor() {
         super();

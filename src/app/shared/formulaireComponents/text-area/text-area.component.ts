@@ -64,6 +64,7 @@ export class TextAreaComponent extends GeneriqueComponent implements OnInit {
     /**
      * Erreur à afficher sous le champ
      */
+    @Input()
     public erreur?: string;
 
     /**

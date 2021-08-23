@@ -1,4 +1,3 @@
-import { HttpService } from './service/httpService';
 import { Injector, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { RadioButtonComponent } from './shared/formulaireComponents/radio-button/radio-button.component';
 import { TextAreaComponent } from './shared/formulaireComponents/text-area/text-area.component';
 import { SelectComponent } from './shared/formulaireComponents/select/select.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { LoginComponent } from './pages/login/login.component';
+import { ButtonComponent } from './shared/formulaireComponents/button/button.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,23 @@ import { SelectComponent } from './shared/formulaireComponents/select/select.com
     InputComponent,
     RadioButtonComponent,
     TextAreaComponent,
-    SelectComponent
+    SelectComponent,
+    LoginComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    JwtModule.forRoot({
+        config: {
+            tokenGetter: () => localStorage.getItem("jwt"),
+            allowedDomains: ["localhost:8088"],
+            disallowedRoutes: ["http://localhost:8088/login"],
+            skipWhenExpired: true
+          }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

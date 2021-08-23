@@ -1,0 +1,5 @@
+<button
+  [type]="type"
+  [disabled]="disabled"
+  [ngClass]="{ submit: type === 'submit', reset: type === 'reset' }"
+>{{ value }}</button>

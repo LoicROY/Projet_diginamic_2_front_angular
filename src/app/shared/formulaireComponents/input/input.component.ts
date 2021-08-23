@@ -77,6 +77,7 @@ export class InputComponent extends GeneriqueComponent implements OnInit {
     /**
      * Erreur à afficher sous le champ
      */
+    @Input()
     public erreur?: string;
 
     /**
@@ -108,20 +109,23 @@ export class InputComponent extends GeneriqueComponent implements OnInit {
     public checkValidite(): void {
         if (!this.inputModel && this.required) {
             this.erreur = this.ERREUR.REQUIRED;
+            this.erreurChange.emit(this.erreur);
         }
 
-        // Si champs nulle, pas de check de format
+        // Si champs nul, pas de check de format
         if (!this.inputModel){
             return;
         }
 
         if (this.minlength && this.inputModel.length < this.minlength) {
             this.erreur = this.ERREUR.MIN_LENGHT;
+            this.erreurChange.emit(this.erreur);
             return;
         }
 
         if (this.maxlength && this.inputModel.length > this.maxlength) {
             this.erreur = this.ERREUR.MAX_LENGHT;
+            this.erreurChange.emit(this.erreur);
             return;
         }
 
@@ -129,18 +133,21 @@ export class InputComponent extends GeneriqueComponent implements OnInit {
             case 'tel':
                 if (!new RegExp(this.REGEX.TEL).test(this.inputModel!)) {
                     this.erreur = this.ERREUR.TEL_FORMAT;
+                    this.erreurChange.emit(this.erreur);
                 }
                 break;
             
             case 'email':
                 if (!new RegExp(this.REGEX.EMAIL).test(this.inputModel!)) {
                     this.erreur = this.ERREUR.EMAIL_FORMAT;
+                    this.erreurChange.emit(this.erreur);
                 }
                 break;
 
             case 'date':
                 if (!new RegExp(this.REGEX.DATE).test(this.inputModel!)) {
                     this.erreur = this.ERREUR.DATE_FORMAT;
+                    this.erreurChange.emit(this.erreur);
                 }
                 break;
         }
@@ -160,7 +167,6 @@ export class InputComponent extends GeneriqueComponent implements OnInit {
 
     /**
      * Controle du format à la sortie du champs
-     * @param event 
      */
     public onBlurHandler(event: any): void {
         this.checkValidite();
