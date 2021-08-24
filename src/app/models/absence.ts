@@ -1,8 +1,8 @@
 
-export interface absence  {
-  "id": number,
+export interface Absence  {
+  "id"?: number,
   "statut": ('INITIALE' | 'VALIDEE' | 'EN_ATTENTE_VALIDATION' | 'REJETEE'),
-  "type":string,
+  "type": ('CongeAnticipe' | 'CongePaye' | 'CongeSansSolde' | 'JourFerie' | 'RttEmploye' | 'RttEmployeur'),
   "dateDebut"?: Date,
   "dateFin"?: Date,
   "motif"?: string,
@@ -10,5 +10,3 @@ export interface absence  {
   "jour"?:  Date,
   "libelle"?: string,
 }
-
-

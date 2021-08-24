@@ -14,13 +14,14 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './pages/login/login.component';
 import { ButtonComponent } from './shared/formulaireComponents/button/button.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { AcceuilComponent } from './component/accueil/accueil.component';
+import { AccueilComponent } from './pages/accueil/accueil.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { CalendarComponent } from './component/calendar/calendar.component';
+import { CalendarComponent } from './shared/calendar/calendar.component';
 import { PagesComponent } from './pages/pages.component';
+import { CompteurComponent } from './pages/accueil/compteur/compteur.component';
 
 
 @NgModule({
@@ -34,8 +35,9 @@ import { PagesComponent } from './pages/pages.component';
     ButtonComponent,
     SidebarComponent,
     PagesComponent,
-    AcceuilComponent,
-    CalendarComponent
+    AccueilComponent,
+    CalendarComponent,
+    CompteurComponent
   ],
   imports: [
     HttpClientModule,

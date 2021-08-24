@@ -1,6 +1,6 @@
 import { GeneriqueComponent } from './../../generique/generique.component';
 import { Component, Input, OnInit } from '@angular/core';
-import { UserLogin } from 'src/app/model/userLogin';
+import { UserLogin } from 'src/app/models/userLogin';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 

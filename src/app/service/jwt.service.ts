@@ -1,3 +1,4 @@
+import { Salarie } from './../models/salarie';
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
@@ -7,9 +8,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 export class JwtService extends JwtHelperService {
 
     /**
-     * Utilisateur connecté
+     * L'utilisateur connecté
      */
-    public utilisateurCourant = this.decodeToken(sessionStorage.getItem('jwt')!).user;
+    public utilisateurCourant: Salarie = this.decodeToken(sessionStorage.getItem('jwt')!).user;
 
     constructor() {
         super();
