@@ -12,23 +12,11 @@ import { Absence } from 'src/app/models/absence';
 })
 export class AccueilComponent extends GeneriqueComponent implements OnInit {
 
-    public jeuDeDonnees: Absence[] = [ 
-        {
-            id:2,
-            statut:"INITIALE",
-            type:"CongePaye",
-            dateDebut: new Date(2021,7,20),
-            dateFin: new Date(2021,7,23),
-            motif:"vacance"
-        } 
-    ];
-
-    constructor(public jwtService: JwtService) {
+     constructor(public jwtService: JwtService) {
         super();
     }
 
     ngOnInit(): void {
-        console.log(this.jwtService.utilisateurCourant);
     }
 
 }

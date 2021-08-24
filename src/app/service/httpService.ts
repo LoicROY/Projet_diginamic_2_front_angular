@@ -25,11 +25,4 @@ export class HttpService {
         return this.http.post<string>(this.backEndUrl + "login", userLogin, requestOptions);
     }
 
-    getSalarieCp(): Observable<number> {
-        return this.http.get<number>("http://localhost:8888/salarie/getSoldeCp");
-    }
-    getSalarieRTT(): Observable<number> {
-        return this.http.get<number>("http://localhost:8888/salarie/getSoldeRtt");
-    }
-
 }
