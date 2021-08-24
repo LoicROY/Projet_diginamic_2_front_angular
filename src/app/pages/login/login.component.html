@@ -1,0 +1,36 @@
+<div>
+  <app-input
+    [(inputModel)]="userLogin.email"
+    [id]="'login-email'"
+    [label]="TEXTE.LABEL.LOGIN_EMAIL"
+    [type]="'email'"
+    [placeholder]="TEXTE.PLACEHOLDER.LOGIN_EMAIL"
+    [required]="true"
+    [(erreur)]="erreur.email"
+  ></app-input>
+
+  <app-input
+    [(inputModel)]="userLogin.password"
+    [id]="'login-password'"
+    [label]="TEXTE.LABEL.LOGIN_PASSWORD"
+    [type]="'text'"
+    [placeholder]="TEXTE.PLACEHOLDER.LOGIN_PASSWORD"
+    [required]="true"
+    [(erreur)]="erreur.password"
+  ></app-input>
+
+  <app-radio-button
+    [(radioBtnModel)]="seSouvenirDuMDP"
+    [name]="'souvenirMDP'"
+    [options]="[TEXTE.LABEL.LOGIN_SE_SOUVENIR_DU_MDP]"
+    [disabled]="true"
+  ></app-radio-button>
+
+  <app-button
+    [value]="TEXTE.LABEL.LOGIN_BUTTON"
+    [type]="'submit'"
+    (click)="login()"
+    [disabled]="loginDisabled()"
+  ></app-button>
+
+</div>
