@@ -26,6 +26,16 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+
+## URL du back déployé
+
+https://projet-2-diginamic.herokuapp.com/
+
+## URL du front déployé
+
+https://loicroy.github.io/Projet_diginamic_2_front_angular/
+
+
 ## Texte
 
 Le texte est séparé dans un dossier séparé et récupéré en tant que propriétés dans un composant parent de tous les autres composants.
@@ -57,6 +67,9 @@ Le texte est séparé dans un dossier séparé et récupéré en tant que propri
     -> legende
         + legende
     
+-> acceuil
+    + accueil
+
 -> pages
     -> accueil
         + acceuil
@@ -94,8 +107,8 @@ Le texte est séparé dans un dossier séparé et récupéré en tant que propri
         -> components
             -> histogramme
                 + histogramme
-    -> authentification
-        + authentification
+    -> login
+        + login
     -> export
         + export
         -> components
