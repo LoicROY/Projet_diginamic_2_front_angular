@@ -12,7 +12,7 @@ export class HttpService {
      * Url du backend
      */
      private backEndUrl: string = "http://localhost:8088/"
-     
+
     constructor(private http: HttpClient) { }
 
     /**

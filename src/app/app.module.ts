@@ -24,6 +24,7 @@ import { PagesComponent } from './pages/pages.component';
 import { CompteurComponent } from './pages/accueil/compteur/compteur.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { DemandeAbsenceComponent } from './pages/demande-absence/demande-absence.component';
+import { GererDEmandeComponent } from './pages/gerer-demande/gerer-demande.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { DemandeAbsenceComponent } from './pages/demande-absence/demande-absence
     AccueilComponent,
     CalendarComponent,
     CompteurComponent,
-    DemandeAbsenceComponent
+    DemandeAbsenceComponent,
+    GererDEmandeComponent
   ],
   imports: [
     HttpClientModule,
