@@ -23,6 +23,7 @@ import { CalendarComponent } from './shared/calendar/calendar.component';
 import { PagesComponent } from './pages/pages.component';
 import { CompteurComponent } from './pages/accueil/compteur/compteur.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import { DemandeAbsenceComponent } from './pages/demande-absence/demande-absence.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
     PagesComponent,
     AccueilComponent,
     CalendarComponent,
-    CompteurComponent
+    CompteurComponent,
+    DemandeAbsenceComponent
   ],
   imports: [
     HttpClientModule,
