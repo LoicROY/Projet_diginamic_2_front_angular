@@ -15,6 +15,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ButtonComponent } from './shared/formulaireComponents/button/button.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { PagesComponent } from './pages/pages.component';
+import { DemandeAbsenceComponent } from './pages/demande-absence/demande-absence.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PagesComponent } from './pages/pages.component';
     LoginComponent,
     ButtonComponent,
     SidebarComponent,
-    PagesComponent
+    PagesComponent,
+    DemandeAbsenceComponent
   ],
   imports: [
     BrowserModule,

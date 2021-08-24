@@ -1,0 +1,18 @@
+form{
+  h1{
+    padding:15px
+  }
+  #gauche{
+    float:left;
+    padding:15px;
+    app-radio-button{
+      padding:10px;
+    }
+  }
+  #droite{
+    padding:15px;
+    app-button{
+      padding-left:85px;
+    }
+  }
+}

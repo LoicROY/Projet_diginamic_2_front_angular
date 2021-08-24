@@ -1,0 +1,40 @@
+<div>
+  <form>
+    <div>
+      <h1>Demande d'absence</h1>
+    </div>
+    <div id="corps">
+      <div id="gauche">
+        <app-input
+          [inputModel]
+          [id]="'date-debut'"
+          [label]="TEXTE.LABEL.DATE_DEBUT"
+          [type]="'date'"
+          [required]="true"
+        ></app-input>
+        <app-input
+          [inputModel]
+          [id]="'date-fin'"
+          [label]="TEXTE.LABEL.DATE_FIN"
+          [type]="'date'"
+          [required]="true"
+        ></app-input>
+        <app-radio-button
+          [radioBtnModel]
+          [name]="'typeAbsence'"
+          [options]="['Congés Payés','RTT','Congés sans solde']"
+        ></app-radio-button>
+      </div>
+      <div id="droite">
+        <app-text-area
+          [textAreaModel]
+          [label]="TEXTE.LABEL.MOTIFS"
+          [id]="'motifs'"
+        ></app-text-area>
+        <app-button
+        [value] = "TEXTE.LABEL.SOUMETTRE"
+      ></app-button>
+      </div>
+    </div>
+  </form>
+</div>
