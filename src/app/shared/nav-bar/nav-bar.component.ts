@@ -1,3 +1,4 @@
+import { JwtService } from 'src/app/service/jwt.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(public jwtService: JwtService) { }
 
   ngOnInit(): void {
   }

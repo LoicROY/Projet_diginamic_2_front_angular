@@ -1,0 +1,28 @@
+
+<nav class="navbar navbar-light bg-light ">
+  <div id="nav_global">
+    <div id="bloc-logo">
+      <a class="navbar-brand" href="#">
+        <img src="../../../assets/image/logo_small_icon_only_inverted.png" width="160" height="auto" alt="logo">
+      </a>
+    </div>
+    <div id="bloc-image">
+      <a>
+        <img src="../../../assets/image/NOR_1.png" class="img-fluid" alt="paysage">
+      </a>
+    </div>
+    <div id="bloc-info-colab">
+      <a>
+        <div>
+          <label>Collaborateur :</label>
+          <p>{{ jwtService.utilisateurCourant.prenom }}</p>
+        </div>
+        <div>
+          <label >Votre Responsable du pole :</label>
+          <p>{{ jwtService.utilisateurCourant.manager?.prenom }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</nav>
+

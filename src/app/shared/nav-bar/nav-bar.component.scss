@@ -1,25 +1,24 @@
-#nav_global{
+#nav_global {
   display: flex;
   justify-content: space-between;
   background-color: darkgrey;
 }
-.navbar-brand{
- margin: 20px;
+.navbar-brand {
+  margin: 20px;
   align-self: center;
 }
-#bloc-logo{
+#bloc-logo {
   align-self: center;
 }
-#bloc-image{
+#bloc-image {
   align-self: center;
   margin-left: 5px;
   margin-right: 20px;
 }
-#bloc-info-colab{
+#bloc-info-colab {
   margin: 20px;
 }
-label{
+label {
   font-weight: bold;
   font-size: 20px;
 }
-
