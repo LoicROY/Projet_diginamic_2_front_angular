@@ -5,6 +5,7 @@ import { setAppInjector } from './app-injector';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { InputComponent } from './shared/formulaireComponents/input/input.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RadioButtonComponent } from './shared/formulaireComponents/radio-button/radio-button.component';
@@ -23,10 +24,10 @@ import { CalendarComponent } from './shared/calendar/calendar.component';
 import { PagesComponent } from './pages/pages.component';
 import { CompteurComponent } from './pages/accueil/compteur/compteur.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
+    NavBarComponent
     InputComponent,
     RadioButtonComponent,
     TextAreaComponent,
