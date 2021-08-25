@@ -8,7 +8,9 @@ export const TEXTE_HTML: any = {
         DATE_DEBUT: "Date Début",
         DATE_FIN: "Date Fin",
         MOTIFS: "Motifs",
-        SOUMETTRE: "Soumettre"
+        SOUMETTRE: "Soumettre",
+        ANNEE: "Année",
+        MOIS: "Mois"
     },
 
     PLACEHOLDER: {
@@ -17,7 +19,9 @@ export const TEXTE_HTML: any = {
     },
 
     TITRE: {
-        DEMANDE_ABSENCE_TITRE: "Demande d'absence"
+        DEMANDE_ABSENCE_TITRE: "Demande d'absence",
+        JOURS_FERIES: "Jours Fériés",
+        RTT_EMPLOYEUR: "RTT Employeur"
     }
 
 }

@@ -1,3 +1,5 @@
+['RttEmploye', 'CongePaye', 'CongeSansSolde']
+import { Absence } from 'src/app/models/absence';
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
@@ -12,7 +14,7 @@ export class HttpService {
      * Url du backend
      */
      private backEndUrl: string = "http://localhost:8088/"
-     
+
     constructor(private http: HttpClient) { }
 
     /**
