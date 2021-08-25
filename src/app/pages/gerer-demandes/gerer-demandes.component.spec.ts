@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GererDEmandeComponent } from './gerer-demande.component';
+import { GererDemandesComponent } from './gerer-demandes.component';
 
 describe('GererDEmandeComponent', () => {
-  let component: GererDEmandeComponent;
-  let fixture: ComponentFixture<GererDEmandeComponent>;
+  let component: GererDemandesComponent;
+  let fixture: ComponentFixture<GererDemandesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GererDEmandeComponent ]
+      declarations: [ GererDemandesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GererDEmandeComponent);
+    fixture = TestBed.createComponent(GererDemandesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
