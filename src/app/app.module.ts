@@ -50,10 +50,11 @@ import { DemandeAbsenceComponent } from './pages/demande-absence/demande-absence
     HttpClientModule,
     JwtModule.forRoot({
         config: {
-            tokenGetter: () => localStorage.getItem("jwt"),
+            tokenGetter: () => sessionStorage.getItem('jwt'),
             allowedDomains: ["localhost:8088"],
             disallowedRoutes: ["http://localhost:8088/login"],
-            skipWhenExpired: true
+            skipWhenExpired: true,
+            throwNoTokenError: true,
           }
     }),
     NgbModule,
