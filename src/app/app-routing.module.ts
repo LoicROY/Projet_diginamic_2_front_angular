@@ -15,8 +15,8 @@ const routes: Routes = [
         canActivate: [AuthentificationGuard],
         children: [
             { path: '', pathMatch: 'full', redirectTo: URL.ACCUEIL },
-            { path: 'accueil', component: AccueilComponent },
-            { path: 'demandeAbsence', component: DemandeAbsenceComponent },
+            { path: URL.ACCUEIL, component: AccueilComponent },
+            { path: URL.DEMANDE_ABSENCE, component: DemandeAbsenceComponent }
         ]
     },
     { path: URL.LOGIN, canActivate: [LoginGuard], component: LoginComponent },

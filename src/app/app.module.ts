@@ -2,7 +2,6 @@ import { Injector, LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { setAppInjector } from './app-injector';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputComponent } from './shared/formulaireComponents/input/input.component';
@@ -31,6 +30,7 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
 import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -74,6 +74,7 @@ import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.co
       provide: DateAdapter,
       useFactory: adapterFactory,
     }),
+    FontAwesomeModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "fr-FR" }
