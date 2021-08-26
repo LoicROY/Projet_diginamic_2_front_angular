@@ -8,7 +8,7 @@ import { global } from '../string/ConstGlobal';
 import { HttpService } from '../service/httpService';
 
 export class GeneriqueComponent {
-  
+
     public readonly TEXTE: any = TEXTE_HTML;
     public readonly REGEX: any = REGEX;
     public readonly ERREUR: any = ERREUR;
