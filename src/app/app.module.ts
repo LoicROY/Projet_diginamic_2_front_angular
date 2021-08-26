@@ -24,6 +24,7 @@ import { PagesComponent } from './pages/pages.component';
 import { CompteurComponent } from './pages/accueil/compteur/compteur.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { DemandeAbsenceComponent } from './pages/demande-absence/demande-absence.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { DemandeAbsenceComponent } from './pages/demande-absence/demande-absence
       provide: DateAdapter,
       useFactory: adapterFactory,
     }),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
