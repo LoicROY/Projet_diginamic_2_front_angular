@@ -31,6 +31,7 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
 import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.component';
+import { AbsenceObligatoireComponent } from './pages/demande-absence/absence-obligatoire/absence-obligatoire.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.co
     JoursNonTravaillesComponent,
     JoursFeriesComponent,
     RttEmployeurComponent,
-    GererDemandesComponent
+    GererDemandesComponent,
+    AbsenceObligatoireComponent
   ],
   imports: [
     HttpClientModule,

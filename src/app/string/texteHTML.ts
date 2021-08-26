@@ -7,7 +7,9 @@ export const TEXTE_HTML: any = {
         LOGIN_BUTTON: "Se connecter",
         DATE_DEBUT: "Date Début",
         DATE_FIN: "Date Fin",
+        DATE: "Date",
         MOTIFS: "Motifs",
+        LIBELLE: "Libellé",
         SOUMETTRE: "Soumettre",
         ANNEE: "Année",
         MOIS: "Mois"
@@ -21,7 +23,8 @@ export const TEXTE_HTML: any = {
     TITRE: {
         DEMANDE_ABSENCE_TITRE: "Demande d'absence",
         JOURS_FERIES: "Jours Fériés",
-        RTT_EMPLOYEUR: "RTT Employeur"
+        RTT_EMPLOYEUR: "RTT Employeur",
+        AJOUT_NON_TRAVAILLE: "Ajout jour non travaillé"
     }
 
 }
