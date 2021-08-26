@@ -1,4 +1,4 @@
-<div class="form-group">
+<div>
   <!-- label -->
   <label for="{{ name }}" id="label-select-{{ name }}">{{ label }}</label>
   <span *ngIf="!required">&nbsp;(optionnel)</span>
@@ -8,7 +8,6 @@
     id="{{ name }}"
     [required]="required"
     [disabled]="disabled"
-    class="form-control"
     [(ngModel)]="selectModel"
     [compareWith]="isSelect"
     (ngModelChange)="modelChange()"

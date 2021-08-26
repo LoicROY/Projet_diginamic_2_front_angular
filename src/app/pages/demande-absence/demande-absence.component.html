@@ -1,37 +1,49 @@
 <div>
+  <!-- ALERTE -->
+  <div *ngIf="erreurMessage" class="alert alert-danger" role="alert">
+    {{ erreurMessage }}
+  </div>
+  <div *ngIf="succesMessage" class="alert alert-success" role="alert">
+    {{ succesMessage }}
+  </div>
+
+  <!-- DEMANDE ABSENCE -->
   <form>
     <div>
-      <h1>Demande d'absence</h1>
+      <h1>{{ TEXTE.TITRE.DEMANDE_ABSENCE_TITRE }}</h1>
     </div>
     <div id="corps">
       <div id="gauche">
         <app-input
-          [inputModel]
+          [(inputModel)]="absence.dateDebut"
           [id]="'date-debut'"
           [label]="TEXTE.LABEL.DATE_DEBUT"
           [type]="'date'"
           [required]="true"
         ></app-input>
         <app-input
-          [inputModel]
+          [(inputModel)]="absence.dateFin"
           [id]="'date-fin'"
           [label]="TEXTE.LABEL.DATE_FIN"
           [type]="'date'"
           [required]="true"
         ></app-input>
         <app-radio-button
-          [radioBtnModel]
+          [(radioBtnModel)]="absence.type"
           [name]="'typeAbsence'"
-          [options]="['Congés Payés', 'RTT', 'Congés sans solde']"
+          [options]="['RttEmploye', 'CongePaye', 'CongeSansSolde']"
         ></app-radio-button>
       </div>
       <div id="droite">
         <app-text-area
-          [textAreaModel]
+          [(textAreaModel)]="absence.motif"
           [label]="TEXTE.LABEL.MOTIFS"
           [id]="'motifs'"
         ></app-text-area>
-        <app-button [value]="TEXTE.LABEL.SOUMETTRE"></app-button>
+        <app-button
+          [value]="TEXTE.LABEL.SOUMETTRE"
+          (click)="demandeAbsence()"
+        ></app-button>
       </div>
     </div>
   </form>

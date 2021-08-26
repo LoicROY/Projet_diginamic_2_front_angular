@@ -30,6 +30,7 @@ import { RttEmployeurComponent } from './pages/jours-non-travailles/rtt-employeu
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
+import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ registerLocaleData(localeFr, 'fr');
     JoursNonTravaillesComponent,
     JoursFeriesComponent,
     RttEmployeurComponent,
+    GererDemandesComponent
   ],
   imports: [
     HttpClientModule,
@@ -59,10 +61,11 @@ registerLocaleData(localeFr, 'fr');
     HttpClientModule,
     JwtModule.forRoot({
         config: {
-            tokenGetter: () => localStorage.getItem("jwt"),
+            tokenGetter: () => sessionStorage.getItem('jwt'),
             allowedDomains: ["localhost:8088"],
             disallowedRoutes: ["http://localhost:8088/login"],
-            skipWhenExpired: true
+            skipWhenExpired: true,
+            throwNoTokenError: true,
           }
     }),
     NgbModule,
