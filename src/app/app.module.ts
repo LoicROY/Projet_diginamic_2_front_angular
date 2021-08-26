@@ -24,7 +24,7 @@ import { PagesComponent } from './pages/pages.component';
 import { CompteurComponent } from './pages/accueil/compteur/compteur.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { DemandeAbsenceComponent } from './pages/demande-absence/demande-absence.component';
-import { GererDEmandeComponent } from './pages/gerer-demandes/gerer-demandes.component';
+import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,7 @@ import { GererDEmandeComponent } from './pages/gerer-demandes/gerer-demandes.com
     CalendarComponent,
     CompteurComponent,
     DemandeAbsenceComponent,
-    GererDEmandeComponent
+    GererDemandesComponent
   ],
   imports: [
     HttpClientModule,
@@ -52,9 +52,9 @@ import { GererDEmandeComponent } from './pages/gerer-demandes/gerer-demandes.com
     HttpClientModule,
     JwtModule.forRoot({
         config: {
-            tokenGetter: () => localStorage.getItem("jwt"),
-            allowedDomains: ["localhost:8088"],
-            disallowedRoutes: ["http://localhost:8088/login"],
+            tokenGetter: () => sessionStorage.getItem("jwt"),
+            allowedDomains: ["localhost:8888"],
+            disallowedRoutes: ["http://localhost:8888/login"],
             skipWhenExpired: true
           }
     }),
