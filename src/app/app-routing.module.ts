@@ -1,3 +1,5 @@
+import { JoursNonTravaillesComponent } from './pages/jours-non-travailles/jours-non-travailles.component';
+import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -16,7 +18,12 @@ const routes: Routes = [
         children: [
             { path: '', pathMatch: 'full', redirectTo: URL.ACCUEIL },
             { path: URL.ACCUEIL, component: AccueilComponent },
-            { path: URL.DEMANDE_ABSENCE, component: DemandeAbsenceComponent }
+            { path: URL.DEMANDE_ABSENCE, component: DemandeAbsenceComponent },
+            { path: URL.GERER_DEMANDE, component: GererDemandesComponent },
+            // { path: URL.VISUALISER_DEMANDE, component: VisualiserDemandeAbsenceComponent },
+            // { path: URL.HISTORIQUE, component: HistoriqueComponent },
+            { path: URL.JOURS_NON_TRAVAILLES, component: JoursNonTravaillesComponent },
+            // { path: URL.GERER_PLANNING, component: GererPlanningComponent },
         ]
     },
     { path: URL.LOGIN, canActivate: [LoginGuard], component: LoginComponent },
