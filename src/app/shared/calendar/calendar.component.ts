@@ -75,12 +75,8 @@ export class CalendarComponent implements OnInit {
                 //         day.cssClass = 'bg-warning';
                 //     }
                 // }
-
             })
         });
     }
-
-
-
 }
 

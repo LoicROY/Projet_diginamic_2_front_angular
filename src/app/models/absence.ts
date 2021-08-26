@@ -8,5 +8,5 @@ export interface Absence  {
   motif?: string,
   date?: string,
   jour?:  string,
-  libelle?: string,
+  libelle?: string
 }

@@ -1,0 +1,13 @@
+
+  <div *ngFor="let absence of salarie.absences">
+    <ngb-alert *ngIf="absence.statut==='INITIALE'" [type]="alerts[0].type">{{absence.type+" du " +absence.dateDebut+" au " + absence.dateFin + " -> " + absence.statut}}</ngb-alert>
+    <ngb-alert *ngIf="absence.statut==='VALIDEE'" [type]="alerts[1].type">{{absence.type+" du " +absence.dateDebut+" au " + absence.dateFin + " -> " + absence.statut}}</ngb-alert>
+    <ngb-alert *ngIf="absence.statut==='EN_ATTENTE_VALIDATION'" [type]="alerts[2].type">{{absence.type+" du " +absence.dateDebut+" au " + absence.dateFin + " -> " + absence.statut}}</ngb-alert>
+    <ngb-alert *ngIf="absence.statut==='REJETEE'" [type]="alerts[3].type">{{absence.type+" du " +absence.dateDebut+" au " + absence.dateFin + " -> " + absence.statut}}</ngb-alert>
+  </div>
+
+
+<p>
+  <button type="button" class="btn btn-primary">Reset</button>
+</p>
+

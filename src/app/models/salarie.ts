@@ -5,8 +5,8 @@ import { Authority } from "./authority";
 export interface Salarie {
     absences: Absence[],
     authorities: Authority[],
-    dateArrivee: Date,
-    dateDeNaissance: Date,
+    dateArrivee:string,
+    dateDeNaissance: string,
     departement: Departement,
     email: string,
     id?: number,
