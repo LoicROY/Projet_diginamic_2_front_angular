@@ -53,8 +53,8 @@ import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.co
     JwtModule.forRoot({
         config: {
             tokenGetter: () => sessionStorage.getItem("jwt"),
-            allowedDomains: ["localhost:8888"],
-            disallowedRoutes: ["http://localhost:8888/login"],
+            allowedDomains: ["localhost:8088"],
+            disallowedRoutes: ["http://localhost:8088/login"],
             skipWhenExpired: true
           }
     }),
