@@ -48,39 +48,35 @@ export class CalendarComponent implements OnInit {
     }
 
     beforeMonthViewRender(renderEvent: CalendarMonthViewBeforeRenderEvent): void {
-        // renderEvent.body.forEach((day) => {
-        //     this.absences.forEach((absence) => {
-        //         if (absence.type === "CongePaye") {
-        //             if (day.date >= absence.dateDebut! && day.date <= absence.dateFin! && day.inMonth) {
-        //                 day.cssClass = 'bg-danger';
-        //             }
-        //         }
-        //         if (absence.type === "RttEmploye") {
-        //             if (day.date >= absence.dateDebut! && day.date <= absence.dateFin! && day.inMonth) {
-        //                 day.cssClass = 'bg-primary';
-        //             }
-        //         }
-        //         if (absence.type === "RttEmployeur") {
-        //             if (day.date >= absence.jour! && day.date <= absence.jour! && day.inMonth) {
-        //                 day.cssClass = 'bg-success';
-        //             }
-        //         }
-        //         if (absence.type === "CongeSansSolde") {
-        //             if (day.date >= absence.dateDebut! && day.date <= absence.dateDebut! && day.inMonth) {
-        //                 day.cssClass = 'bg-secondary';
-        //             }
-        //         }
-        //         if (absence.type === "JourFerie") {
-        //             if (day.date >= absence.jour! && day.date <= absence.jour! && day.inMonth) {
-        //                 day.cssClass = 'bg-warning';
-        //             }
-        //         }
-        //
-        //     })
-        // });
+        renderEvent.body.forEach((day) => {
+            this.absences.forEach((absence) => {
+                // if (absence.type === "CongePaye") {
+                //     if (day.date >= absence.dateDebut! && day.date <= absence.dateFin! && day.inMonth) {
+                //         day.cssClass = 'bg-danger';
+                //     }
+                // }
+                // if (absence.type === "RttEmploye") {
+                //     if (day.date >= absence.dateDebut! && day.date <= absence.dateFin! && day.inMonth) {
+                //         day.cssClass = 'bg-primary';
+                //     }
+                // }
+                // if (absence.type === "RttEmployeur") {
+                //     if (day.date >= absence.jour! && day.date <= absence.jour! && day.inMonth) {
+                //         day.cssClass = 'bg-success';
+                //     }
+                // }
+                // if (absence.type === "CongeSansSolde") {
+                //     if (day.date >= absence.dateDebut! && day.date <= absence.dateDebut! && day.inMonth) {
+                //         day.cssClass = 'bg-secondary';
+                //     }
+                // }
+                // if (absence.type === "JourFerie") {
+                //     if (day.date >= absence.jour! && day.date <= absence.jour! && day.inMonth) {
+                //         day.cssClass = 'bg-warning';
+                //     }
+                // }
+            })
+        });
     }
-
-
-
 }
 

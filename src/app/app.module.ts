@@ -52,10 +52,11 @@ import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.co
     HttpClientModule,
     JwtModule.forRoot({
         config: {
-            tokenGetter: () => sessionStorage.getItem("jwt"),
+            tokenGetter: () => sessionStorage.getItem('jwt'),
             allowedDomains: ["localhost:8088"],
             disallowedRoutes: ["http://localhost:8088/login"],
-            skipWhenExpired: true
+            skipWhenExpired: true,
+            throwNoTokenError: true,
           }
     }),
     NgbModule,

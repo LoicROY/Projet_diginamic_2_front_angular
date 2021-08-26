@@ -1,3 +1,4 @@
+import { Absence } from 'src/app/models/absence';
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
@@ -11,7 +12,7 @@ export class HttpService {
     /**
      * Url du backend
      */
-     private backEndUrl: string = "http://localhost:8888/"
+    private backEndUrl: string = "http://localhost:8088/"
 
     constructor(private http: HttpClient) { }
 
@@ -23,6 +24,13 @@ export class HttpService {
             responseType: 'text'
         }
         return this.http.post<string>(this.backEndUrl + "login", userLogin, requestOptions);
+    }
+
+    /**
+     * Enregistrement d'une absence
+     */
+    public postAbsence(absence: Absence): Observable<any> {
+        return this.http.post<string>(this.backEndUrl + absence.type, absence);
     }
 
 }
