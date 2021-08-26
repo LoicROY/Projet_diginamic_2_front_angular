@@ -1,4 +1,4 @@
-import { Injector, NgModule } from '@angular/core';
+import { Injector, LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { setAppInjector } from './app-injector';
@@ -24,6 +24,12 @@ import { PagesComponent } from './pages/pages.component';
 import { CompteurComponent } from './pages/accueil/compteur/compteur.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { DemandeAbsenceComponent } from './pages/demande-absence/demande-absence.component';
+import { JoursNonTravaillesComponent } from './pages/jours-non-travailles/jours-non-travailles.component';
+import { JoursFeriesComponent } from './pages/jours-non-travailles/jours-feries/jours-feries.component';
+import { RttEmployeurComponent } from './pages/jours-non-travailles/rtt-employeur/rtt-employeur.component';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
 import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.component';
 
 @NgModule({
@@ -42,6 +48,9 @@ import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.co
     CalendarComponent,
     CompteurComponent,
     DemandeAbsenceComponent,
+    JoursNonTravaillesComponent,
+    JoursFeriesComponent,
+    RttEmployeurComponent,
     GererDemandesComponent
   ],
   imports: [
@@ -66,7 +75,9 @@ import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.co
       useFactory: adapterFactory,
     }),
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: "fr-FR" }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
