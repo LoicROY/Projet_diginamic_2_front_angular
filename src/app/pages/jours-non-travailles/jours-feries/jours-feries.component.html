@@ -1,14 +1,14 @@
 <h2 [textContent] = "TEXTE.TITRE.JOURS_FERIES"></h2>
 <app-select
   [(selectModel)]="annee"
-  [options]="['2019','2020','2021','2022']"
+  [options]="anneeOptions"
   [name]="'choixAnnee'"
   [label]="TEXTE.LABEL.ANNEE"
   [required]="required"
 ></app-select>
 <app-select
   [(selectModel)]="mois"
-  [options]="['Janvier','Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre' ]"
+  [options]="moisOptions"
   [name]="'choixJoursFeries'"
   [label]="TEXTE.LABEL.MOIS"
   [required]="required"

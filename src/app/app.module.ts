@@ -2,7 +2,6 @@ import { Injector, LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { setAppInjector } from './app-injector';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputComponent } from './shared/formulaireComponents/input/input.component';
@@ -32,7 +31,9 @@ import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
 import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.component';
 import { AbsenceObligatoireComponent } from './pages/demande-absence/absence-obligatoire/absence-obligatoire.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { ValiderDemandeComponent } from './pages/valider-demande/valider-demande.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,8 @@ import { AbsenceObligatoireComponent } from './pages/demande-absence/absence-obl
     RttEmployeurComponent,
     GererDemandesComponent,
     AbsenceObligatoireComponent
+    SignUpComponent,
+    ValiderDemandeComponent
   ],
   imports: [
     HttpClientModule,
@@ -66,7 +69,13 @@ import { AbsenceObligatoireComponent } from './pages/demande-absence/absence-obl
         config: {
             tokenGetter: () => sessionStorage.getItem('jwt'),
             allowedDomains: ["localhost:8088"],
-            disallowedRoutes: ["http://localhost:8088/login"],
+            disallowedRoutes: [
+                "http://localhost:8088/login",
+                "http://localhost:8088/Departement/getAll",
+                "http://localhost:8088/Salarie/create",
+                "http://localhost:8088/Manager/create",
+                "http://localhost:8088/Administrateur/create"
+            ],
             skipWhenExpired: true,
             throwNoTokenError: true,
           }
@@ -77,6 +86,7 @@ import { AbsenceObligatoireComponent } from './pages/demande-absence/absence-obl
       provide: DateAdapter,
       useFactory: adapterFactory,
     }),
+    FontAwesomeModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "fr-FR" }

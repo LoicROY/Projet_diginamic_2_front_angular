@@ -1,3 +1,4 @@
+import { Option } from './../../../models/option';
 import { GeneriqueComponent } from './../../../generique/generique.component';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
@@ -24,7 +25,7 @@ export class RadioButtonComponent extends GeneriqueComponent implements OnInit {
      * Les données à lister en radio button
      */
     @Input()
-    public options!: string[];
+    public options!: Option[];
 
     /**
     * nom du composant
@@ -44,11 +45,6 @@ export class RadioButtonComponent extends GeneriqueComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // TODO voir avec rossi pour régler le problème de binding
-        // if (!this.radioBtnModel) {
-        //     this.radioBtnModel = this.options[0];
-        //     this.radioBtnModelChange.emit(this.radioBtnModel);
-        // }
     }
 
     /**
@@ -59,8 +55,8 @@ export class RadioButtonComponent extends GeneriqueComponent implements OnInit {
         this.radioBtnModelChange.emit(this.radioBtnModel);        
     }
 
-    public isCheck(option: any): boolean {
-        return option === this.radioBtnModel;
+    public isCheck(value: any): boolean {
+        return value === this.radioBtnModel;
     }
 
 }

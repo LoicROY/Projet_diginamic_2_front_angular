@@ -6,8 +6,5 @@
     <ngb-alert *ngIf="absence.statut==='REJETEE'" [type]="alerts[3].type">{{absence.type+" du " +absence.dateDebut+" au " + absence.dateFin + " -> " + absence.statut}}</ngb-alert>
   </div>
 
-
-<p>
-  <button type="button" class="btn btn-primary">Reset</button>
-</p>
+  <p *ngIf="salarie.absences.length === 0">Vous n'avez aucune demande d'absence</p>
 

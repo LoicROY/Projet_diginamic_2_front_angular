@@ -1,0 +1,39 @@
+nav {
+  padding: 10px 20px;
+  background: darkgray;
+  display: flex;
+  flex-direction: column;
+  // height: 100%; // si on veut le background sur toute la hauteur de la page
+
+  div {
+    margin: 5px 0px;
+    padding: 5px 15px;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #007bff;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        color: white;
+      }
+
+      fa-icon {
+        margin-right: 10px;
+      }
+
+      p {
+        margin: 0;
+        text-decoration-line: underline;
+      }
+    }
+  }
+}
+
+.redColor {
+    color: #a73d3d;
+}

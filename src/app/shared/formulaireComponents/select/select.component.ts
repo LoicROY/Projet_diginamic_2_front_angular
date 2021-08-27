@@ -1,3 +1,4 @@
+import { Option } from './../../../models/option';
 import { GeneriqueComponent } from './../../../generique/generique.component';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
@@ -24,7 +25,7 @@ export class SelectComponent extends GeneriqueComponent implements OnInit {
     * Les données à lister
     */
    @Input()
-   public options!: string[];
+   public options!: Option[];
 
    /**
     * nom du composant

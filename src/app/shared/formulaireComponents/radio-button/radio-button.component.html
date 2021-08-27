@@ -4,13 +4,13 @@
       type="radio"
       [name]="name"
       id="{{ name }}-{{ i }}"
-      [value]="option"
-      (change)="modelChange(option)"
-      [checked]="isCheck(option)"
+      [value]="option.value"
+      (change)="modelChange(option.value)"
+      [checked]="isCheck(option.value)"
       [disabled]="disabled"
     />
     <label
       for="{{ name }}-{{ i }}"
-    >{{option}}</label>
+    >{{option.text}}</label>
   </div>
 </div>
