@@ -33,6 +33,7 @@ registerLocaleData(localeFr, 'fr');
 import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.component';
 import { AbsenceObligatoireComponent } from './pages/demande-absence/absence-obligatoire/absence-obligatoire.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
