@@ -48,4 +48,4 @@
     </div>
   </form>
 </div>
-<app-demande-absence></app-demande-absence>
+<app-absence-obligatoire (ErrorChange)="erreurMessage = $event" (SuccessChange)="succesMessage = $event"></app-absence-obligatoire>
