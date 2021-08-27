@@ -30,6 +30,7 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
 import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.component';
+import { AbsenceObligatoireComponent } from './pages/demande-absence/absence-obligatoire/absence-obligatoire.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { ValiderDemandeComponent } from './pages/valider-demande/valider-demande.component';
@@ -54,6 +55,7 @@ import { ValiderDemandeComponent } from './pages/valider-demande/valider-demande
     JoursFeriesComponent,
     RttEmployeurComponent,
     GererDemandesComponent,
+    AbsenceObligatoireComponent
     SignUpComponent,
     ValiderDemandeComponent
   ],
