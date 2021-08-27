@@ -64,4 +64,25 @@ export class HttpService {
         return this.http.get<Departement[]>(this.backEndUrl + 'Departement/getAll');
     }
 
+    /**
+     * Récupère la liste des departements en base
+     */
+    public getAllManagers(): Observable<Salarie[]> {
+        return this.http.get<Salarie[]>(this.backEndUrl + 'Manager/getAll');
+    }
+
+    /**
+     * Récupère la liste des rtt employeurs en base
+     */
+    public getAllRttEmployeur(): Observable<Absence[]> {
+        return this.http.get<Absence[]>(this.backEndUrl + 'RttEmployeur');
+    }
+
+    /**
+     * Récupère la liste des jours fériés en base
+     */
+    public getAllJoursFeries(): Observable<Absence[]> {
+        return this.http.get<Absence[]>(this.backEndUrl + 'JourFerie');
+    }
+
 }

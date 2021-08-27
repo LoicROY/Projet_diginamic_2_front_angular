@@ -1,5 +1,5 @@
-<app-calendar [absences]="jwtService.utilisateurCourant.absences"></app-calendar>
+<app-calendar [absences]="jwtService.getUser().absences"></app-calendar>
 <app-compteur
-  [soldeCP]="jwtService.utilisateurCourant.soldeCP!"
-  [soldeRTT]="jwtService.utilisateurCourant.soldeRTT!"
+  [soldeCP]="jwtService.getUser().soldeCP!"
+  [soldeRTT]="jwtService.getUser().soldeRTT!"
 ></app-compteur>

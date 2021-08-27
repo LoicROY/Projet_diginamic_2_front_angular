@@ -2,6 +2,7 @@ import { Option } from './../../models/option';
 import { Absence } from './../../models/absence';
 import { Component, OnInit } from '@angular/core';
 import { GeneriqueComponent } from 'src/app/generique/generique.component';
+import { JwtService } from 'src/app/service/jwt.service';
 
 @Component({
     selector: 'app-demande-absence',
@@ -18,7 +19,7 @@ export class DemandeAbsenceComponent extends GeneriqueComponent implements OnIni
         type: 'CongePaye'
     }
 
-    public typeOptions: Option[]= [
+    public typeOptions: Option[] = [
         { value: 'RttEmploye', text: 'RttEmploye' },
         { value: 'CongePaye', text: 'CongePaye' },
         { value: 'CongeSansSolde', text: 'CongeSansSolde' }
@@ -34,7 +35,7 @@ export class DemandeAbsenceComponent extends GeneriqueComponent implements OnIni
      */
     public erreurMessage?: string;
 
-    constructor() {
+    constructor(public jwtService: JwtService) {
         super();
     }
 
@@ -45,6 +46,10 @@ export class DemandeAbsenceComponent extends GeneriqueComponent implements OnIni
      * Envoi de l'absence au back pour validation par le batch de nuit puis par le manager
      */
     public demandeAbsence(): void {
+        // reset des messages erreur et success
+        this.succesMessage = undefined;
+        this.erreurMessage = undefined;
+
         this.httpService.postAbsence(this.absence).subscribe(
             () => this.succesMessage = this.SUCCES.DEMANDE_ABSENCE,
             (data) => this.erreurMessage = data.error.message

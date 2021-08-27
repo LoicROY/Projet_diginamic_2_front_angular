@@ -7,13 +7,15 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class JwtService extends JwtHelperService {
 
-    /**
-     * L'utilisateur connecté
-     */
-    public utilisateurCourant: Salarie = this.decodeToken(sessionStorage.getItem('jwt')!).user;
-
     constructor() {
         super();
+    }
+
+    /**
+     * Retourne l'utilisateur connecté
+     */
+    public getUser(): Salarie {
+        return this.decodeToken(sessionStorage.getItem('jwt')!).user;
     }
 
 }

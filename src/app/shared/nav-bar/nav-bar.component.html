@@ -15,11 +15,11 @@
       <a>
         <div>
           <label>Collaborateur :</label>
-          <p>{{ jwtService.utilisateurCourant.prenom }}</p>
+          <p>{{ jwtService.getUser().prenom }}</p>
         </div>
         <div>
           <label >Votre Responsable du pole :</label>
-          <p>{{ jwtService.utilisateurCourant.manager?.prenom }}</p>
+          <p>{{ jwtService.getUser().manager?.prenom }}</p>
         </div>
       </a>
     </div>

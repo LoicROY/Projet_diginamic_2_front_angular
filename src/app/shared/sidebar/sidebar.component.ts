@@ -34,7 +34,7 @@ export class SidebarComponent extends GeneriqueComponent implements OnInit {
     }
 
     public isManager(): boolean {
-        return this.jwtService.utilisateurCourant.type === "Manager";
+        return this.jwtService.getUser().type === "Manager";
     }
 
     public logout(): void {

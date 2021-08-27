@@ -1,4 +1,4 @@
-<h2 [textContent] = "TEXTE.TITRE.RTT_EMPLOYEUR"></h2>
+<h2 [textContent]="TEXTE.TITRE.RTT_EMPLOYEUR"></h2>
 <app-select
   [(selectModel)]="annee"
   [options]="anneeOptions"
@@ -14,9 +14,14 @@
   [required]="required"
 ></app-select>
 <table>
-  <tr *ngFor='let absence of absences; let i = index'>
-    <td *ngIf='absence.date!.substring(0,4) === (annee) && nomMois[+absence.date!.substring(5,7)] === (mois)'>
-      {{absences[i].libelle!}} | {{absences[i].date |  date :'fullDate'}}
+  <tr *ngFor="let absence of absences; let i = index">
+    <td
+      *ngIf="
+        absence.date!.substring(0, 4) === this.annee &&
+        absence.date!.substring(5, 7) == this.mois
+      "
+    >
+      {{ absences[i].libelle! }} | {{ absences[i].date | date: "fullDate" }}
     </td>
   </tr>
 </table>

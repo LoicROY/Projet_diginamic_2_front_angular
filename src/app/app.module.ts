@@ -74,6 +74,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
                 "http://localhost:8088/Departement/getAll",
                 "http://localhost:8088/Salarie/create",
                 "http://localhost:8088/Manager/create",
+                "http://localhost:8088/Manager/getAll",
                 "http://localhost:8088/Administrateur/create"
             ],
             skipWhenExpired: true,

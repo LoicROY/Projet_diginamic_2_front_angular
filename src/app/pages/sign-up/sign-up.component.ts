@@ -39,6 +39,11 @@ export class SignUpComponent extends GeneriqueComponent implements OnInit {
      */
     public departementsOptions: Option[] = [];
 
+    /**
+     * stock les managers présent en base
+     */
+    public managerOptions: Option[] = [];
+
 
     constructor(private router: Router) {
         super();
@@ -46,6 +51,7 @@ export class SignUpComponent extends GeneriqueComponent implements OnInit {
 
     ngOnInit(): void {
         this.getAllDepartements();
+        this.getAllManagers()
     }
 
     /**
@@ -61,6 +67,18 @@ export class SignUpComponent extends GeneriqueComponent implements OnInit {
     }
 
     /**
+     * Récupère la liste des departements en base
+     */
+    public getAllManagers(): void {
+        this.httpService.getAllManagers().subscribe(
+            managers => managers.forEach(data => this.managerOptions.push(
+                { value: data, text: data.prenom + ' ' + data.nom.toUpperCase() }
+            )),
+            erreur => console.log(erreur)
+        );
+    }
+
+    /**
      * Desactive le bouton si les champs requis ne sont pas remplis ou si il y a des erreurs
      */
     public signupDisabled(): boolean {
@@ -68,6 +86,7 @@ export class SignUpComponent extends GeneriqueComponent implements OnInit {
             !this.user.dateDeNaissance ||
             !this.user.email ||
             !this.user.departement ||
+            !this.user.manager ||
             !this.user.nom ||
             !this.user.password ||
             !this.user.prenom ||
@@ -76,19 +95,11 @@ export class SignUpComponent extends GeneriqueComponent implements OnInit {
             this.erreur.dateDeNaissance != undefined ||
             this.erreur.email != undefined ||
             this.erreur.departement != undefined ||
+            this.erreur.manager != undefined ||
             this.erreur.nom != undefined ||
             this.erreur.password != undefined ||
             this.erreur.prenom != undefined
     }
-    /**
-     * dateArrivee?:string,
-    dateDeNaissance?: string,
-    email?: string,
-    departement?: Departement,
-    nom?: string,
-    password?: string,
-    prenom?: string,
-     */
 
     /**
      * Appel au back pour créer un salarie ou manager ou admin

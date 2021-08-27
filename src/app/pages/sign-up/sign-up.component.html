@@ -70,6 +70,14 @@
       [options]="departementsOptions"
       [required]="true"
     ></app-select>
+
+    <app-select
+      [(selectModel)]="user.manager"
+      [label]="TEXTE.LABEL.SIGNUP_MANAGER"
+      [name]="'manager'"
+      [options]="managerOptions"
+      [required]="true"
+    ></app-select>
   
     <app-button
       [value]="TEXTE.LABEL.SIGNUP_BUTTON"

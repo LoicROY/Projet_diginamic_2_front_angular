@@ -21,6 +21,7 @@ export const TEXTE_HTML: any = {
         SIGNUP_DATE_ARRIVEE: 'Veuillez renseignez votre date d\'arrivée',
         SIGNUP_PASSWORD: 'Veuillez renseignez votre password',
         SIGNUP_DEPARTEMENT: 'Veuillez renseignez votre département',
+        SIGNUP_MANAGER: 'Veuillez renseignez votre manager',
         SIGNUP_BUTTON: 'Créer mon compte',
         SIGNUP_DEJA_UN_COMPTE: 'J\'ai déjà un compte'
     },

@@ -48,4 +48,8 @@
     </div>
   </form>
 </div>
-<app-absence-obligatoire (ErrorChange)="erreurMessage = $event" (SuccessChange)="succesMessage = $event"></app-absence-obligatoire>
+<app-absence-obligatoire
+  *ngIf="jwtService.getUser().type === 'Administrateur'"
+  (ErrorChange)="erreurMessage = $event"
+  (SuccessChange)="succesMessage = $event"
+></app-absence-obligatoire>
