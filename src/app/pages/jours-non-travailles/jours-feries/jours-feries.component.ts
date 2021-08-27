@@ -1,3 +1,4 @@
+import { Option } from './../../../models/option';
 import { Component, Input, OnInit } from '@angular/core';
 import { startOfMinute } from 'date-fns';
 import { GeneriqueComponent } from 'src/app/generique/generique.component';
@@ -14,7 +15,29 @@ export class JoursFeriesComponent extends GeneriqueComponent implements OnInit {
 
   public mois?:string
 
-  public nomMois:string[] = ['Janvier','Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre' ]
+  public nomMois: string[] = [
+    'Janvier',
+    'Février',
+    'Mars',
+    'Avril',
+    'Mai',
+    'Juin',
+    'Juillet',
+    'Août',
+    'Septembre',
+    'Octobre',
+    'Novembre',
+    'Décembre'
+  ];
+
+  public moisOptions: Option[] = [];
+
+  public anneeOptions: Option[] = [
+    { value: '2019', text: '2019' },
+    { value: '2020', text: '2020' },
+    { value: '2021', text: '2021' },
+    { value: '2022', text: '2022' }
+  ];
 
   @Input()
   public required: boolean = true;
@@ -45,6 +68,9 @@ export class JoursFeriesComponent extends GeneriqueComponent implements OnInit {
 
   constructor() {
     super();
+    this.nomMois.forEach(mois => this.moisOptions.push(
+        { value: mois, text: mois }
+    ))
   }
 
   ngOnInit(): void {

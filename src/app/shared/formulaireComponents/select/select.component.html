@@ -13,6 +13,6 @@
     (ngModelChange)="modelChange()"
     (blur)="onBlurHandler($event)"
   >
-    <option *ngFor="let option of options" [ngValue]="option">{{option}}</option>
+    <option *ngFor="let option of options" [ngValue]="option.value">{{option.text}}</option>
   </select>
 </div>

@@ -9,6 +9,7 @@ import { LoginGuard } from './guards/login.guard';
 import { PagesComponent } from './pages/pages.component';
 import { AccueilComponent } from './pages/accueil/accueil.component';
 import { DemandeAbsenceComponent } from './pages/demande-absence/demande-absence.component';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 const routes: Routes = [
     { 
@@ -27,6 +28,7 @@ const routes: Routes = [
         ]
     },
     { path: URL.LOGIN, canActivate: [LoginGuard], component: LoginComponent },
+    { path: URL.SIGN_UP, canActivate: [LoginGuard], component: SignUpComponent },
     { path: '', pathMatch: 'full', redirectTo: URL.PAGES }
 ];
 

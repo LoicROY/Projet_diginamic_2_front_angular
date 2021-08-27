@@ -31,6 +31,7 @@ import localeFr from '@angular/common/locales/fr';
 registerLocaleData(localeFr, 'fr');
 import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SignUpComponent } from './pages/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     JoursNonTravaillesComponent,
     JoursFeriesComponent,
     RttEmployeurComponent,
-    GererDemandesComponent
+    GererDemandesComponent,
+    SignUpComponent
   ],
   imports: [
     HttpClientModule,
@@ -63,7 +65,13 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
         config: {
             tokenGetter: () => sessionStorage.getItem('jwt'),
             allowedDomains: ["localhost:8088"],
-            disallowedRoutes: ["http://localhost:8088/login"],
+            disallowedRoutes: [
+                "http://localhost:8088/login",
+                "http://localhost:8088/Departement/getAll",
+                "http://localhost:8088/Salarie/create",
+                "http://localhost:8088/Manager/create",
+                "http://localhost:8088/Administrateur/create"
+            ],
             skipWhenExpired: true,
             throwNoTokenError: true,
           }

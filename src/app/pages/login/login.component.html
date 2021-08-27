@@ -4,7 +4,7 @@
     [id]="'login-email'"
     [label]="TEXTE.LABEL.LOGIN_EMAIL"
     [type]="'email'"
-    [placeholder]="TEXTE.PLACEHOLDER.LOGIN_EMAIL"
+    [placeholder]="TEXTE.PLACEHOLDER.EMAIL"
     [required]="true"
     [(erreur)]="erreur.email"
   ></app-input>
@@ -14,7 +14,7 @@
     [id]="'login-password'"
     [label]="TEXTE.LABEL.LOGIN_PASSWORD"
     [type]="'text'"
-    [placeholder]="TEXTE.PLACEHOLDER.LOGIN_PASSWORD"
+    [placeholder]="TEXTE.PLACEHOLDER.PASSWORD"
     [required]="true"
     [(erreur)]="erreur.password"
   ></app-input>
@@ -22,7 +22,7 @@
   <app-radio-button
     [(radioBtnModel)]="seSouvenirDuMDP"
     [name]="'souvenirMDP'"
-    [options]="[TEXTE.LABEL.LOGIN_SE_SOUVENIR_DU_MDP]"
+    [options]="[{ value: true, text: TEXTE.LABEL.LOGIN_SE_SOUVENIR_DU_MDP }]"
     [disabled]="true"
   ></app-radio-button>
 
@@ -32,5 +32,7 @@
     (click)="login()"
     [disabled]="loginDisabled()"
   ></app-button>
+
+  <a [routerLink]="'/' + URL.SIGN_UP">{{ TEXTE.LABEL.LOGIN_PAS_DE_COMPTE }}</a>
 
 </div>
