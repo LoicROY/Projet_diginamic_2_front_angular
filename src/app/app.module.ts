@@ -12,7 +12,6 @@ import { SelectComponent } from './shared/formulaireComponents/select/select.com
 import { JwtModule } from '@auth0/angular-jwt';
 import { LoginComponent } from './pages/login/login.component';
 import { ButtonComponent } from './shared/formulaireComponents/button/button.component';
-import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { AccueilComponent } from './pages/accueil/accueil.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -34,6 +33,7 @@ import { AbsenceObligatoireComponent } from './pages/demande-absence/absence-obl
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
 import { ValiderDemandeComponent } from './pages/valider-demande/valider-demande.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,7 @@ import { ValiderDemandeComponent } from './pages/valider-demande/valider-demande
     JoursFeriesComponent,
     RttEmployeurComponent,
     GererDemandesComponent,
-    AbsenceObligatoireComponent
+    AbsenceObligatoireComponent,
     SignUpComponent,
     ValiderDemandeComponent
   ],

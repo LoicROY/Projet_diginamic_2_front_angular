@@ -19,7 +19,7 @@
     <app-radio-button
       [(radioBtnModel)]="absence.type"
       [name]="'typeAbsence'"
-      [options]="['JourFerie', 'RttEmployeur']"
+      [options]="[{ value: 'JourFerie', text: 'JourFerie' }, { value: 'RttEmployeur', text: 'RttEmployeur' }]"
     ></app-radio-button>
     <app-button
         [value]="TEXTE.LABEL.SOUMETTRE"
