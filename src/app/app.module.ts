@@ -32,6 +32,7 @@ registerLocaleData(localeFr, 'fr');
 import { GererDemandesComponent } from './pages/gerer-demandes/gerer-demandes.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { ValiderDemandeComponent } from './pages/valider-demande/valider-demande.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     JoursFeriesComponent,
     RttEmployeurComponent,
     GererDemandesComponent,
-    SignUpComponent
+    SignUpComponent,
+    ValiderDemandeComponent
   ],
   imports: [
     HttpClientModule,
