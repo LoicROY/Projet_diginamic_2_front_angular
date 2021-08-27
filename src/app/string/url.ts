@@ -1,6 +1,7 @@
 export const URL: any = {
 
     LOGIN: 'login',
+    SIGN_UP: 'signUp',
     PAGES: 'pages',
     ACCUEIL: 'accueil',
     DEMANDE_ABSENCE: 'demandeAbsence',

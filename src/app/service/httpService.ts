@@ -1,3 +1,5 @@
+import { Departement } from './../models/departement';
+import { UserSignUp } from 'src/app/models/userSignUp';
 import { Absence } from 'src/app/models/absence';
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
@@ -27,10 +29,24 @@ export class HttpService {
     }
 
     /**
+     * Methode de création d'un salarie ou manager ou admin
+     */
+     public signup(userSignUp: UserSignUp): Observable<any> {
+        return this.http.post<string>(this.backEndUrl + userSignUp.type + '/create', userSignUp);
+    }
+
+    /**
      * Enregistrement d'une absence
      */
     public postAbsence(absence: Absence): Observable<any> {
         return this.http.post<string>(this.backEndUrl + absence.type, absence);
+    }
+
+    /**
+     * Récupère la liste des departements en base
+     */
+    public getAllDepartements(): Observable<Departement[]> {
+        return this.http.get<Departement[]>(this.backEndUrl + 'Departement/getAll');
     }
 
 }

@@ -1,3 +1,4 @@
+import { Option } from './../../models/option';
 import { Absence } from './../../models/absence';
 import { Component, OnInit } from '@angular/core';
 import { GeneriqueComponent } from 'src/app/generique/generique.component';
@@ -16,6 +17,12 @@ export class DemandeAbsenceComponent extends GeneriqueComponent implements OnIni
         statut: 'EN_ATTENTE_VALIDATION',
         type: 'CongePaye'
     }
+
+    public typeOptions: Option[]= [
+        { value: 'RttEmploye', text: 'RttEmploye' },
+        { value: 'CongePaye', text: 'CongePaye' },
+        { value: 'CongeSansSolde', text: 'CongeSansSolde' }
+    ]
 
     /**
      * Message de réussite
