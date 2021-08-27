@@ -1,4 +1,9 @@
-#tableau{
-    width: 500px
-  }
-  
+#bloc-compteur {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+#titre-compteur {
+  padding-bottom: 15px;
+}

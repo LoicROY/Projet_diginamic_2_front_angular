@@ -1,5 +1,7 @@
-<app-calendar [absences]="jwtService.getUser().absences"></app-calendar>
-<app-compteur
-  [soldeCP]="jwtService.getUser().soldeCP!"
-  [soldeRTT]="jwtService.getUser().soldeRTT!"
-></app-compteur>
+<div class="contenair-Home-Page">
+  <app-calendar [absences]="jwtService.getUser().absences"></app-calendar>
+  <app-compteur
+    [soldeCP]="jwtService.getUser().soldeCP!"
+    [soldeRTT]="jwtService.getUser().soldeRTT!"
+  ></app-compteur>
+</div>

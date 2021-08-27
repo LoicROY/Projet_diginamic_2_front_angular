@@ -1,3 +1,4 @@
+import { GeneriqueComponent } from 'src/app/generique/generique.component';
 import { JwtService } from 'src/app/service/jwt.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -6,9 +7,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent extends GeneriqueComponent implements OnInit {
 
-  constructor(public jwtService: JwtService) { }
+  constructor(public jwtService: JwtService) {
+      super();
+  }
 
   ngOnInit(): void {
   }

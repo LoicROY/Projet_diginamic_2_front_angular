@@ -3,7 +3,7 @@
     <div *ngIf="page.show">
       <a
         [routerLink]="page.href"
-        [ngClass]="{ redColor: isLast(i) }"
+        [ngClass]="{ blueColor: isLast(i) }"
         (click)="isLast(i) ? logout() : null"
       >
         <fa-icon [icon]="page.icon"></fa-icon>
