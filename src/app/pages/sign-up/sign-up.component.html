@@ -1,91 +1,114 @@
-<div>
-    <app-input
-      [(inputModel)]="user.nom"
-      [id]="'signup-nom'"
-      [label]="TEXTE.LABEL.SIGNUP_NOM"
-      [type]="'text'"
-      [placeholder]="TEXTE.PLACEHOLDER.NOM"
-      [required]="true"
-      [(erreur)]="erreur.nom"
-    ></app-input>
+<div id="signup">
+  <div class="form">
+    <div>
+      <app-input
+        [(inputModel)]="user.nom"
+        [id]="'signup-nom'"
+        [label]="TEXTE.LABEL.SIGNUP_NOM"
+        [type]="'text'"
+        [placeholder]="TEXTE.PLACEHOLDER.NOM"
+        [required]="true"
+        [(erreur)]="erreur.nom"
+      ></app-input>
+    </div>
 
-    <app-input
-      [(inputModel)]="user.prenom"
-      [id]="'signup-prenom'"
-      [label]="TEXTE.LABEL.SIGNUP_PRENOM"
-      [type]="'text'"
-      [placeholder]="TEXTE.PLACEHOLDER.PRENOM"
-      [required]="true"
-      [(erreur)]="erreur.prenom"
-    ></app-input>
+    <div>
+      <app-input
+        [(inputModel)]="user.prenom"
+        [id]="'signup-prenom'"
+        [label]="TEXTE.LABEL.SIGNUP_PRENOM"
+        [type]="'text'"
+        [placeholder]="TEXTE.PLACEHOLDER.PRENOM"
+        [required]="true"
+        [(erreur)]="erreur.prenom"
+      ></app-input>
+    </div>
 
-    <app-input
-      [(inputModel)]="user.email"
-      [id]="'signup-email'"
-      [label]="TEXTE.LABEL.SIGNUP_EMAIL"
-      [type]="'email'"
-      [placeholder]="TEXTE.PLACEHOLDER.EMAIL"
-      [required]="true"
-      [(erreur)]="erreur.email"
-    ></app-input>
+    <div>
+      <app-input
+        [(inputModel)]="user.email"
+        [id]="'signup-email'"
+        [label]="TEXTE.LABEL.SIGNUP_EMAIL"
+        [type]="'email'"
+        [placeholder]="TEXTE.PLACEHOLDER.EMAIL"
+        [required]="true"
+        [(erreur)]="erreur.email"
+      ></app-input>
+    </div>
 
-    <app-input
-      [(inputModel)]="user.dateDeNaissance"
-      [id]="'signup-dateDeNaissance'"
-      [label]="TEXTE.LABEL.SIGNUP_DATE_NAISSANCE"
-      [type]="'date'"
-      [required]="true"
-      [(erreur)]="erreur.dateDeNaissance"
-    ></app-input>
+    <div>
+      <app-input
+        [(inputModel)]="user.dateDeNaissance"
+        [id]="'signup-dateDeNaissance'"
+        [label]="TEXTE.LABEL.SIGNUP_DATE_NAISSANCE"
+        [type]="'date'"
+        [required]="true"
+        [(erreur)]="erreur.dateDeNaissance"
+      ></app-input>
+    </div>
 
-    <app-input
-      [(inputModel)]="user.dateArrivee"
-      [id]="'signup-dateArrivee'"
-      [label]="TEXTE.LABEL.SIGNUP_DATE_ARRIVEE"
-      [type]="'date'"
-      [required]="true"
-      [(erreur)]="erreur.dateArrivee"
-    ></app-input>
-  
-    <app-input
-      [(inputModel)]="user.password"
-      [id]="'signup-password'"
-      [label]="TEXTE.LABEL.SIGNUP_PASSWORD"
-      [type]="'password'"
-      [placeholder]="TEXTE.PLACEHOLDER.PASSWORD"
-      [required]="true"
-      [(erreur)]="erreur.password"
-    ></app-input>
-  
-    <app-radio-button
-      [(radioBtnModel)]="user.type"
-      [name]="'type'"
-      [options]="typeOptions"
-    ></app-radio-button>
+    <div>
+      <app-input
+        [(inputModel)]="user.dateArrivee"
+        [id]="'signup-dateArrivee'"
+        [label]="TEXTE.LABEL.SIGNUP_DATE_ARRIVEE"
+        [type]="'date'"
+        [required]="true"
+        [(erreur)]="erreur.dateArrivee"
+      ></app-input>
+    </div>
 
-    <app-select
-      [(selectModel)]="user.departement"
-      [label]="TEXTE.LABEL.SIGNUP_DEPARTEMENT"
-      [name]="'departement'"
-      [options]="departementsOptions"
-      [required]="true"
-    ></app-select>
+    <div>
+      <app-input
+        [(inputModel)]="user.password"
+        [id]="'signup-password'"
+        [label]="TEXTE.LABEL.SIGNUP_PASSWORD"
+        [type]="'password'"
+        [placeholder]="TEXTE.PLACEHOLDER.PASSWORD"
+        [required]="true"
+        [(erreur)]="erreur.password"
+      ></app-input>
+    </div>
 
-    <app-select
-      [(selectModel)]="user.manager"
-      [label]="TEXTE.LABEL.SIGNUP_MANAGER"
-      [name]="'manager'"
-      [options]="managerOptions"
-      [required]="true"
-    ></app-select>
-  
-    <app-button
-      [value]="TEXTE.LABEL.SIGNUP_BUTTON"
-      [type]="'submit'"
-      (click)="signup()"
-      [disabled]="signupDisabled()"
-    ></app-button>
+    <div>
+      <app-radio-button
+        [(radioBtnModel)]="user.type"
+        [name]="'type'"
+        [options]="typeOptions"
+      ></app-radio-button>
+    </div>
 
-    <a [routerLink]="'/' + URL.LOGIN">{{ TEXTE.LABEL.SIGNUP_DEJA_UN_COMPTE }}</a>
-  
+    <div>
+      <app-select
+        [(selectModel)]="user.departement"
+        [label]="TEXTE.LABEL.SIGNUP_DEPARTEMENT"
+        [name]="'departement'"
+        [options]="departementsOptions"
+        [required]="true"
+      ></app-select>
+    </div>
+
+    <div>
+      <app-select
+        [(selectModel)]="user.manager"
+        [label]="TEXTE.LABEL.SIGNUP_MANAGER"
+        [name]="'manager'"
+        [options]="managerOptions"
+        [required]="true"
+      ></app-select>
+    </div>
+
+    <div>
+      <app-button
+        [value]="TEXTE.LABEL.SIGNUP_BUTTON"
+        [type]="'submit'"
+        (click)="signup()"
+        [disabled]="signupDisabled()"
+      ></app-button>
+
+      <a [routerLink]="'/' + URL.LOGIN">{{
+        TEXTE.LABEL.SIGNUP_DEJA_UN_COMPTE
+      }}</a>
+    </div>
   </div>
+</div>
