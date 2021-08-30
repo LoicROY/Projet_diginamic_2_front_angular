@@ -4,7 +4,8 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
-  font-family: Arial
+  font-family: Arial;
+  min-height: 100vh;
 }
 
 .message-erreur {

@@ -1,0 +1,23 @@
+#signup {
+  min-height: 100vh;
+  padding: 20px;
+  background: darkorange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .form {
+    border: grey 1px solid;
+    background: white;
+    padding: 20px;
+
+    div {
+      margin-bottom: 10px;
+    }
+  }
+
+  a {
+    color: #0015a9;
+    margin-left: 10px;
+  }
+}

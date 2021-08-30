@@ -27,6 +27,11 @@ export class LoginComponent extends GeneriqueComponent implements OnInit {
     @Input()
     public erreur: { email?: string, password?: string } = {};
 
+    /**
+    * Message d'echec
+    */
+    public erreurMessage?: string;
+
 
     constructor(private router: Router) {
         super();
@@ -46,12 +51,13 @@ export class LoginComponent extends GeneriqueComponent implements OnInit {
      * Appel au back pour le jwt
      */
     public login(): void {
+        this.erreurMessage = undefined;
         this.httpService.login(this.userLogin).subscribe(
-            jwt => { 
+            jwt => {
                 sessionStorage.setItem('jwt', jwt);
                 this.router.navigateByUrl(this.URL.PAGES);
             },
-            erreur => console.log(erreur)
+            erreur => this.erreurMessage = this.ERREUR.MAUVAIS_IDENTIFIANTS
         );
     }
 
