@@ -1,4 +1,5 @@
-<div>
+<div id="global">
+  <div>
   <!-- ALERTE -->
   <div *ngIf="erreurMessage" class="alert alert-danger" role="alert">
     {{ erreurMessage }}
@@ -13,7 +14,6 @@
       <h1>{{ TEXTE.TITRE.DEMANDE_ABSENCE_TITRE }}</h1>
     </div>
     <div id="corps">
-      <div id="gauche">
         <app-input
           [(inputModel)]="absence.dateDebut"
           [id]="'date-debut'"
@@ -33,8 +33,6 @@
           [name]="'typeAbsence'"
           [options]="typeOptions"
         ></app-radio-button>
-      </div>
-      <div id="droite">
         <app-text-area
           [(textAreaModel)]="absence.motif"
           [label]="TEXTE.LABEL.MOTIFS"
@@ -44,12 +42,12 @@
           [value]="TEXTE.LABEL.SOUMETTRE"
           (click)="demandeAbsence()"
         ></app-button>
-      </div>
     </div>
   </form>
-</div>
-<app-absence-obligatoire
+  </div>
+  <app-absence-obligatoire
   *ngIf="jwtService.getUser().type === 'Administrateur'"
   (ErrorChange)="erreurMessage = $event"
   (SuccessChange)="succesMessage = $event"
-></app-absence-obligatoire>
+  ></app-absence-obligatoire>
+</div>
