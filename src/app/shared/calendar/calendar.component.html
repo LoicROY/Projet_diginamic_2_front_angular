@@ -3,13 +3,13 @@
   <div class="col-md-4">
     <div class="btn-group">
       <div
-        class="btn btn-primary"
+        class="btn btn-warning"
         mwlCalendarPreviousView
         [view]="view"
         [(viewDate)]="viewDate"
         (viewDateChange)="viewDateChange.next(viewDate)"
       >
-        Previous
+        Avant
       </div>
       <div
         class="btn btn-outline-secondary"
@@ -17,21 +17,21 @@
         [(viewDate)]="viewDate"
         (viewDateChange)="viewDateChange.next(viewDate)"
       >
-        Today
+        Ce mois-ci
       </div>
       <div
-        class="btn btn-primary"
+        class="btn btn-warning"
         mwlCalendarNextView
         [view]="view"
         [(viewDate)]="viewDate"
         (viewDateChange)="viewDateChange.next(viewDate)"
       >
-        Next
+        Après
       </div>
     </div>
   </div>
   <div class="col-md-4">
-    <h3>{{ viewDate | calendarDate: view + 'ViewTitle':locale }}</h3>
+    <h3>{{ viewDate | calendarDate: view + "ViewTitle":locale }}</h3>
   </div>
 </div>
 <br />
@@ -44,5 +44,4 @@
     (beforeViewRender)="beforeMonthViewRender($event)"
   >
   </mwl-calendar-month-view>
-
 </div>

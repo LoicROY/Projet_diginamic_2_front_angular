@@ -3,6 +3,7 @@
     <div *ngIf="page.show">
       <a
         [routerLink]="page.href"
+        routerLinkActive="active"
         [ngClass]="{ blueColor: isLast(i) }"
         (click)="isLast(i) ? logout() : null"
       >

@@ -19,7 +19,7 @@ export class SidebarComponent extends GeneriqueComponent implements OnInit {
         { icon: faHistory, href: this.URL.HISTORIQUE, label: "Historique", show: true },
         { icon: faCalendarCheck, href: this.URL.JOURS_NON_TRAVAILLES, label: "Jours non travaillés", show: true },
         { icon: faCalendarAlt, href: this.URL.GERER_PLANNING, label: "Gérer le planning", show: this.isManager() },
-        { icon: faUserSlash, href: null, label: "Deconnexion", show: true }
+        { icon: faUserSlash, href: '#', label: "Deconnexion", show: true }
     ]
 
     constructor(private router: Router, private jwtService: JwtService) {

@@ -19,7 +19,7 @@ nav {
       align-items: center;
       color: #800000;
 
-      &:hover {
+      &:hover, &.active {
         color: white !important;
       }
 
@@ -29,7 +29,6 @@ nav {
 
       p {
         margin: 0;
-        text-decoration-line: underline;
       }
     }
   }
