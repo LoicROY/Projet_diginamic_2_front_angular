@@ -66,13 +66,13 @@ import { ValiderDemandeComponent } from './pages/valider-demande/valider-demande
     JwtModule.forRoot({
         config: {
             tokenGetter: () => sessionStorage.getItem('jwt'),
-            allowedDomains: ["localhost:8088"],
+            allowedDomains: ["localhost:8888"],
             disallowedRoutes: [
-                "http://localhost:8088/login",
-                "http://localhost:8088/Departement/getAll",
-                "http://localhost:8088/Salarie/create",
-                "http://localhost:8088/Manager/create",
-                "http://localhost:8088/Administrateur/create"
+                "http://localhost:8888/login",
+                "http://localhost:8888/Departement/getAll",
+                "http://localhost:8888/Salarie/create",
+                "http://localhost:8888/Manager/create",
+                "http://localhost:8888/Administrateur/create"
             ],
             skipWhenExpired: true,
             throwNoTokenError: true,
