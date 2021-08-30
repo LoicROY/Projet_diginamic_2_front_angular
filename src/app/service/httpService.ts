@@ -15,7 +15,7 @@ export class HttpService {
     /**
      * Url du backend
      */
-    private backEndUrl: string = "http://localhost:8088/";
+    private backEndUrl: string = "https://projet-2-diginamic.herokuapp.com/";
 
     constructor(private http: HttpClient) { }
 
