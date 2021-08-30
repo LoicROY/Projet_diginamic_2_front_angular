@@ -1,0 +1,47 @@
+<!--<mwl-demo-utils-calendar-header [(view)]="view" [(viewDate)]="viewDate"></mwl-demo-utils-calendar-header>-->
+<div class="row text-center">
+  <div class="col-md-4">
+    <div class="btn-group">
+      <div
+        class="btn btn-warning"
+        mwlCalendarPreviousView
+        [view]="view"
+        [(viewDate)]="viewDate"
+        (viewDateChange)="viewDateChange.next(viewDate)"
+      >
+        Avant
+      </div>
+      <div
+        class="btn btn-outline-secondary"
+        mwlCalendarToday
+        [(viewDate)]="viewDate"
+        (viewDateChange)="viewDateChange.next(viewDate)"
+      >
+        Ce mois-ci
+      </div>
+      <div
+        class="btn btn-warning"
+        mwlCalendarNextView
+        [view]="view"
+        [(viewDate)]="viewDate"
+        (viewDateChange)="viewDateChange.next(viewDate)"
+      >
+        Après
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h3>{{ viewDate | calendarDate: view + "ViewTitle":locale }}</h3>
+  </div>
+</div>
+<br />
+
+<div [ngSwitch]="view">
+  <mwl-calendar-month-view
+    *ngSwitchCase="'month'"
+    [viewDate]="viewDate"
+    [events]="events"
+    (beforeViewRender)="beforeMonthViewRender($event)"
+  >
+  </mwl-calendar-month-view>
+</div>

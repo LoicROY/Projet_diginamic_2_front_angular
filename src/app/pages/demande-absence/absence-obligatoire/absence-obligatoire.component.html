@@ -1,0 +1,31 @@
+<form>
+  <div>
+    <h1>{{ TEXTE.TITRE.AJOUT_NON_TRAVAILLE }}</h1>
+  </div>
+  <div id="sous-global">
+  <div>
+    <app-input
+      [(inputModel)]="absence.date"
+      [id]="'date'"
+      [label]="TEXTE.LABEL.DATE"
+      [type]="'date'"
+      [required]="true"
+    ></app-input>
+    <app-text-area
+      [(textAreaModel)]="absence.libelle"
+      [label]="TEXTE.LABEL.LIBELLE"
+      [id]="'Libellé'"
+      [required]="true"
+    ></app-text-area>
+    <app-radio-button
+      [(radioBtnModel)]="absence.type"
+      [name]="'typeAbsence'"
+      [options]="[{ value: 'JourFerie', text: 'JourFerie' }, { value: 'RttEmployeur', text: 'RttEmployeur' }]"
+    ></app-radio-button>
+    <app-button
+        [value]="TEXTE.LABEL.SOUMETTRE"
+        (click)="ajoutJourNonTravaille()"
+    ></app-button>
+  </div>
+</div>
+</form>

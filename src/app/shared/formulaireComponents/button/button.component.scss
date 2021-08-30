@@ -1,0 +1,14 @@
+button {
+    background-color: darkorange;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 7px 15px;
+
+    &:hover {
+        color: white;
+    }
+
+    &:disabled {
+        color: rgba(16, 16, 16, 0.3);
+    }
+}

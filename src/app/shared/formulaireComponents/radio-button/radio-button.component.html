@@ -1,0 +1,16 @@
+<div class="d-flex flex-column">
+  <div *ngFor="let option of options; let i = index">
+    <input
+      type="radio"
+      [name]="name"
+      id="{{ name }}-{{ i }}"
+      [value]="option.value"
+      (change)="modelChange(option.value)"
+      [checked]="isCheck(option.value)"
+      [disabled]="disabled"
+    />
+    <label
+      for="{{ name }}-{{ i }}"
+    >{{option.text}}</label>
+  </div>
+</div>

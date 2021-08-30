@@ -1,0 +1,39 @@
+nav {
+  padding: 10px 20px;
+  background: darkorange;
+  display: flex;
+  flex-direction: column;
+  height: 100%; // si on veut le background sur toute la hauteur de la page
+
+  div {
+    margin: 5px 0px;
+    padding: 5px 15px;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #007bff;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      color: #800000;
+
+      &:hover, &.active {
+        color: white !important;
+      }
+
+      fa-icon {
+        margin-right: 10px;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+
+.blueColor {
+    color: #0015a9 !important;
+}

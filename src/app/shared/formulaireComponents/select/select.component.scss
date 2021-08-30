@@ -1,0 +1,9 @@
+div {
+    display: flex;
+    flex-direction: column;
+}
+
+select {
+    min-width: 30vh;
+    width: max-content;
+}

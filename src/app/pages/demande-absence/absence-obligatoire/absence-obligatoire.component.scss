@@ -1,0 +1,19 @@
+#sous-global{
+  margin-left:75px;
+  display:flex
+}
+form{
+  h1{
+    margin-left:75px;
+    padding:15px
+  }
+  div{
+    padding-left:25px;
+    app-input{
+      padding:25px;
+    }
+    app-button{
+      padding-left:85px;
+    }
+  }
+}

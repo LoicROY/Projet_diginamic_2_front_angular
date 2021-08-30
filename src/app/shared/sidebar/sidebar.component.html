@@ -1,0 +1,15 @@
+<nav>
+  <ng-container *ngFor="let page of pages; let i">
+    <div *ngIf="page.show">
+      <a
+        [routerLink]="page.href"
+        routerLinkActive="active"
+        [ngClass]="{ blueColor: isLast(i) }"
+        (click)="isLast(i) ? logout() : null"
+      >
+        <fa-icon [icon]="page.icon"></fa-icon>
+        <p>{{ page.label }}</p>
+      </a>
+    </div>
+  </ng-container>
+</nav>

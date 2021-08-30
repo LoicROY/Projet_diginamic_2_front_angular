@@ -1,0 +1,57 @@
+<div id="login">
+    <!-- ALERTE -->
+  <div *ngIf="erreurMessage" class="alert alert-danger" role="alert">
+    {{ erreurMessage }}
+  </div>
+
+  <!-- Formulaire de login -->
+  <div class="form">
+    <div>
+      <app-input
+        [(inputModel)]="userLogin.email"
+        [id]="'login-email'"
+        [label]="TEXTE.LABEL.LOGIN_EMAIL"
+        [type]="'email'"
+        [placeholder]="TEXTE.PLACEHOLDER.EMAIL"
+        [required]="true"
+        [(erreur)]="erreur.email"
+      ></app-input>
+    </div>
+
+    <div>
+      <app-input
+        [(inputModel)]="userLogin.password"
+        [id]="'login-password'"
+        [label]="TEXTE.LABEL.LOGIN_PASSWORD"
+        [type]="'text'"
+        [placeholder]="TEXTE.PLACEHOLDER.PASSWORD"
+        [required]="true"
+        [(erreur)]="erreur.password"
+      ></app-input>
+    </div>
+
+    <div>
+      <app-radio-button
+        [(radioBtnModel)]="seSouvenirDuMDP"
+        [name]="'souvenirMDP'"
+        [options]="[
+          { value: true, text: TEXTE.LABEL.LOGIN_SE_SOUVENIR_DU_MDP }
+        ]"
+        [disabled]="true"
+      ></app-radio-button>
+    </div>
+
+    <div>
+      <app-button
+        [value]="TEXTE.LABEL.LOGIN_BUTTON"
+        [type]="'submit'"
+        (click)="login()"
+        [disabled]="loginDisabled()"
+      ></app-button>
+
+      <a [routerLink]="'/' + URL.SIGN_UP">
+        {{ TEXTE.LABEL.LOGIN_PAS_DE_COMPTE }}
+      </a>
+    </div>
+  </div>
+</div>

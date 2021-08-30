@@ -1,0 +1,53 @@
+<div id="global">
+  <div>
+  <!-- ALERTE -->
+  <div *ngIf="erreurMessage" class="alert alert-danger" role="alert">
+    {{ erreurMessage }}
+  </div>
+  <div *ngIf="succesMessage" class="alert alert-success" role="alert">
+    {{ succesMessage }}
+  </div>
+
+  <!-- DEMANDE ABSENCE -->
+  <form>
+    <div>
+      <h1>{{ TEXTE.TITRE.DEMANDE_ABSENCE_TITRE }}</h1>
+    </div>
+    <div id="corps">
+        <app-input
+          [(inputModel)]="absence.dateDebut"
+          [id]="'date-debut'"
+          [label]="TEXTE.LABEL.DATE_DEBUT"
+          [type]="'date'"
+          [required]="true"
+        ></app-input>
+        <app-input
+          [(inputModel)]="absence.dateFin"
+          [id]="'date-fin'"
+          [label]="TEXTE.LABEL.DATE_FIN"
+          [type]="'date'"
+          [required]="true"
+        ></app-input>
+        <app-radio-button
+          [(radioBtnModel)]="absence.type"
+          [name]="'typeAbsence'"
+          [options]="typeOptions"
+        ></app-radio-button>
+        <app-text-area
+          [(textAreaModel)]="absence.motif"
+          [label]="TEXTE.LABEL.MOTIFS"
+          [id]="'motifs'"
+        ></app-text-area>
+        <app-button
+          [value]="TEXTE.LABEL.SOUMETTRE"
+          (click)="demandeAbsence()"
+        ></app-button>
+    </div>
+  </form>
+  </div>
+  <app-absence-obligatoire
+  *ngIf="jwtService.getUser().type === 'Administrateur'"
+  (ErrorChange)="erreurMessage = $event"
+  (SuccessChange)="succesMessage = $event"
+  ></app-absence-obligatoire>
+</div>

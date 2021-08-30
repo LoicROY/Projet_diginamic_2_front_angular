@@ -1,0 +1,7 @@
+input {
+    margin-right: 10px;
+}
+
+input:disabled ~ label {
+    text-decoration-line: line-through;
+}

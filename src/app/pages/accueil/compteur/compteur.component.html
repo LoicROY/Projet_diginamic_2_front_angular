@@ -1,0 +1,26 @@
+<div id="bloc-compteur">
+  <h1 id="titre-compteur">Compteur</h1>
+  <div class="">
+    <table id="tableau" class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Solde Actuel</th>
+          <th scope="col">Jours Payés</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">RTT</th>
+          <td>{{ soldeRTT }}</td>
+          <td>{{ resteRTT }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Congé Payer</th>
+          <td>{{ soldeCP }}</td>
+          <td>{{ resteCP }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

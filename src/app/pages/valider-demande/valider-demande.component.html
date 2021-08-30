@@ -1,0 +1,28 @@
+<ng-container *ngFor="let salarie of salaries">
+  <div class="validerDemande" *ngFor="let absence of salarie.absences">
+    <ng-container
+      *ngIf="
+        absence.statut === 'EN_ATTENTE_VALIDATION' &&
+        jwtService.getUser().departement.id === salarie.departement.id
+      "
+    >
+      <ngb-alert [type]="alerts[0].type">{{
+        absence.type +
+          " du " +
+          absence.dateDebut +
+          " au " +
+          absence.dateFin +
+          " pour " +
+          salarie.prenom +
+          " " +
+          salarie.nom
+      }}</ngb-alert>
+      <button type="button" class="btn btn-success" (click)="valider(absence)">
+        Validé
+      </button>
+      <button type="button" class="btn btn-danger" (click)="refuser(absence)">
+        Refusé
+      </button>
+    </ng-container>
+  </div>
+</ng-container>
