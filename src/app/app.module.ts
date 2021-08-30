@@ -68,14 +68,14 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     JwtModule.forRoot({
         config: {
             tokenGetter: () => sessionStorage.getItem('jwt'),
-            allowedDomains: ["localhost:8088"],
+            allowedDomains: ["projet-2-diginamic.herokuapp.com"],
             disallowedRoutes: [
-                "http://localhost:8088/login",
-                "http://localhost:8088/Departement/getAll",
-                "http://localhost:8088/Salarie/create",
-                "http://localhost:8088/Manager/create",
-                "http://localhost:8088/Manager/getAll",
-                "http://localhost:8088/Administrateur/create"
+                "https://projet-2-diginamic.herokuapp.com/login",
+                "https://projet-2-diginamic.herokuapp.com/Departement/getAll",
+                "https://projet-2-diginamic.herokuapp.com/Salarie/create",
+                "https://projet-2-diginamic.herokuapp.com/Manager/create",
+                "https://projet-2-diginamic.herokuapp.com/Manager/getAll",
+                "https://projet-2-diginamic.herokuapp.com/Administrateur/create"
             ],
             skipWhenExpired: true,
             throwNoTokenError: true,
